@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 import { environment } from '../../../../environments/environment';
 
@@ -9,7 +8,7 @@ import { Feature } from './feature';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterOutlet],
+  imports: [RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

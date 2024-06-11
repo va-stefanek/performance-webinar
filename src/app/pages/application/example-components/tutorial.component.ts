@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Channel } from './channel/channel';
+import {ChannelComponent} from "./channel/channel.component";
+import {NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-example-components',
   templateUrl: './tutorial.component.html',
-  styleUrls: ['./tutorial.component.css']
+  styleUrls: ['./tutorial.component.css'],
+  standalone: true,
+  imports: [ChannelComponent, NgOptimizedImage]
 })
 export class TutorialComponent implements OnInit {
 

@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
 import { Inject, PLATFORM_ID } from '@angular/core';
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import {DOCUMENT, isPlatformBrowser, NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterOutlet],
+  imports: [RouterLink, RouterOutlet, NgOptimizedImage],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -37,4 +36,4 @@ export class AppComponent implements OnInit {
     }
   }
 
-}  
+}

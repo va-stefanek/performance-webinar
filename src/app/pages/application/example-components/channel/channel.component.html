@@ -1,5 +1,5 @@
 <div class="nga-card-component p-2 mb-2 text-center" (click)="select(channel)" (keyup)="select(channel)" tabindex="1">
-  <img src="assets/params/images/channels/{{ channel.name }}.jpg" class="img-thumbnail" alt="{{channel.name }}">
+  <img ngSrc="assets/params/images/channels/{{ channel.name }}.jpg" width="300" height="180" class="img-thumbnail" alt="{{channel.name }}">
   <div class="card-body">
     <p class="card-text">{{ channel.releaseDate }}</p>
     <button type="button" class="btn btn-primary btn-sm">n° {{ index }}</button>

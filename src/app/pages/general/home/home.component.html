@@ -30,24 +30,26 @@
     </div>
   </div>
   <div class="row pt-2">
-    <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-2" *ngFor="let feature of features">
-      <div class="card nga-card bg-light mb-3">
-        <a routerLink="/{{ feature.link }}">
-          <div class="card-header">
-            <div class="row">
-              <div class="col-10 col-xl-10">
-                <h4 class="card-title h5">{{ feature.name }}</h4>
-              </div>
-              <div class="col-2 col-xl-2">
-                <i class="{{ feature.icon }} fa-lg text-primary"></i>
+    @for (feature of features; track feature.link) {
+      <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-2">
+        <div class="card nga-card bg-light mb-3">
+          <a routerLink="/{{ feature.link }}">
+            <div class="card-header">
+              <div class="row">
+                <div class="col-10 col-xl-10">
+                  <h4 class="card-title h5">{{ feature.name }}</h4>
+                </div>
+                <div class="col-2 col-xl-2">
+                  <i class="{{ feature.icon }} fa-lg text-primary"></i>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card-body">
-            <p class="card-text">{{ feature.description }}</p>
-          </div>
-        </a>
+            <div class="card-body">
+              <p class="card-text">{{ feature.description }}</p>
+            </div>
+          </a>
+        </div>
       </div>
-    </div>
+    }
   </div>
 </div>

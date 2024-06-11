@@ -1,11 +1,16 @@
 import { Component, EventEmitter, Output, Input } from '@angular/core';
 
 import { Channel } from './channel';
+import {NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-channel',
   templateUrl: './channel.component.html',
-  styleUrls: ['./channel.component.css']
+  styleUrls: ['./channel.component.css'],
+  imports: [
+    NgOptimizedImage
+  ],
+  standalone: true
 })
 export class ChannelComponent {
 

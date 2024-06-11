@@ -13,8 +13,8 @@ export const routes: Routes = [
   },
   {
     path: 'components',
-    loadChildren: () => import('./pages/application/example-components/tutorial.module')
-      .then(mod => mod.TutorialModule)
+    loadComponent: () => import('./pages/application/example-components/tutorial.component')
+      .then(mod => mod.TutorialComponent)
   },
   {
     path: 'forms',
