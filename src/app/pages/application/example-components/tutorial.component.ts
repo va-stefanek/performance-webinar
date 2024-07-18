@@ -12,7 +12,7 @@ export class TutorialComponent {
   store = inject(TutorialStore);
 
   onSelected(event: Channel): void {
-   this.store.selectChannel(event)
+   this.store.setSelectedChannelName(event.name)
   }
 
   onReset(): void {

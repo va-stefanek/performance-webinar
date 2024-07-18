@@ -1,12 +1,12 @@
-import {patchState, signalStore, withComputed, withHooks, withMethods, withState} from "@ngrx/signals";
+import { signalStore, withComputed, withState} from "@ngrx/signals";
 import {computed} from "@angular/core";
+import {stringQueryParamConverter, withUrlParam} from "./with-url-param.feature";
 
-export type Channel = {
+export interface Channel {
   title: string;
   name: string;
   releaseDate: string;
 }
-
 
 export const TutorialStore = signalStore(
   withState({
@@ -25,6 +25,12 @@ export const TutorialStore = signalStore(
     ],
     selectedChannelName: ''
   }),
+  withUrlParam({
+    selectedChannelName: {
+      defaultValue: '',
+      converter: stringQueryParamConverter
+    }
+  }),
   withComputed((store) => {
     return {
       selectedChannel: computed(() => {
@@ -32,20 +38,4 @@ export const TutorialStore = signalStore(
       })
     }
   }),
-  withMethods((store) => {
-    return {
-      selectChannel: (channel: Channel) => {
-        patchState(store, {
-          selectedChannelName: channel.name
-        })
-      }
-    }
-  }),
-  withHooks({
-    onInit: (store) => {
-      patchState(store, {
-        selectedChannelName: store.channels()[0].name
-      })
-    }
-  })
 )
