@@ -25,6 +25,7 @@
     "@angular/router": "18.0.1",
     "@angular/ssr": "18.0.2",
     "@fortawesome/fontawesome-free": "6.5.2",
+    "@ngrx/signals": "^17.2.0",
     "bootstrap": "5.3.3",
     "express": "4.19.2",
     "rxjs": "7.8.1",
